@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -19,20 +20,46 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginRight="80dp"
             android:hint="Nhập tên truyện cần tìm"
             android:textColor="#B3ADAD"
             android:textSize="20sp"
             android:gravity="center"
             />
-    </RelativeLayout>
-    <GridView
-        android:id="@+id/gdvDSTruyen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="3">
 
-    </GridView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nevMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1D8FD3"
+            app:itemTextColor="#F0F0F0"
+            app:itemIconTint="#F0F0F0"
+            app:menu="@menu/menu_bottom"
+            />
+        <FrameLayout
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <GridView
+                android:id="@+id/gdvDSTruyen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="3">
+
+            </GridView>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+
 
 </LinearLayout>

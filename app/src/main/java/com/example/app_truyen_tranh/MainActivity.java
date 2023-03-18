@@ -1,18 +1,28 @@
 package com.example.app_truyen_tranh;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.app_truyen_tranh.adapter.TruyenTranhAdapter;
 import com.example.app_truyen_tranh.api.ApiLayTruyen;
+import com.example.app_truyen_tranh.fragment.HomeFragment;
+import com.example.app_truyen_tranh.fragment.InfoFragment;
+import com.example.app_truyen_tranh.fragment.SettingFragment;
 import com.example.app_truyen_tranh.interfaces.LayTruyenVe;
 import com.example.app_truyen_tranh.object.TruyenTranh;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,7 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements LayTruyenVe {
+public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
 GridView gdvDSTruyen;
 TruyenTranhAdapter adapter;
 ArrayList<TruyenTranh>truyenTranhArrayList;
@@ -33,10 +43,31 @@ EditText edtTimKiemTruyen;
         anhXa();
         setUp();
         setClik();
-        new ApiLayTruyen(this).execute();
+        /*new ApiLayTruyen(this).execute();*/
+
+        btnavView = findViewById(R.id.nevMenu);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Main");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        btnavView.setOnItemSelectedListener(getBtnListener());
     }
     private  void  init(){
         truyenTranhArrayList = new ArrayList<>();
+        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+
 
         adapter = new TruyenTranhAdapter(this,0,truyenTranhArrayList);
     }
@@ -67,7 +98,7 @@ EditText edtTimKiemTruyen;
     });
     }
 
-    @Override
+   /* @Override
     public void batDau() {
         Toast.makeText(this,"Dang Lay Ve",Toast.LENGTH_SHORT).show();
     }
@@ -93,5 +124,47 @@ EditText edtTimKiemTruyen;
     public void biLoi() {
         Toast.makeText(this,"Loi ket noi",Toast.LENGTH_SHORT).show();
 
+    }*/
+
+    BottomNavigationView btnavView;
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==android.R.id.home){
+            finish();
+            return true;
+        }
+        return true;
+    }
+
+    @NonNull
+    private NavigationBarView.OnItemSelectedListener getBtnListener() {
+        return new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.mnHome) {
+                    getSupportActionBar().setTitle(item.getTitle());
+                    loadFragment(new HomeFragment());
+                    return true;
+                } else if (itemId == R.id.mnInfo) {
+                    getSupportActionBar().setTitle(item.getTitle());
+                    loadFragment(new InfoFragment());
+                    return true;
+                } else if (itemId == R.id.mnSetting) {
+                    getSupportActionBar().setTitle(item.getTitle());
+                    loadFragment(new SettingFragment());
+                    return true;
+                }
+                return true;
+            }
+        };
+    }
+
+    void loadFragment (Fragment fmNew) {
+        FragmentTransaction fmDang = getSupportFragmentManager().beginTransaction();
+        fmDang.replace(R.id.main_fragment,fmNew);
+        fmDang.addToBackStack(null);
+        fmDang.commit();
     }
 }
