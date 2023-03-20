@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="6dp">
+    android:padding="6dp"
+   >
     <RelativeLayout
-        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="180dp">
-        <ImageView
-            android:id="@+id/imgAnhTruyen"
-            android:src="@drawable/kyougaku_koukou_no_genjitsu"
-            android:scaleType="centerCrop"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:id="@+id/txvTenChap"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="#A8000000"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:text="chap1"
-            android:textSize="10dp"
-            />
+            android:layout_height="match_parent"
+            app:cardCornerRadius="14dp">
+            <ImageView
+                android:id="@+id/imgAnhTruyen"
+                android:src="@drawable/kyougaku_koukou_no_genjitsu"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <TextView
+                android:id="@+id/txvTenChap"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#A8000000"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:text="chap1"
+                android:textSize="10sp"
+                android:layout_gravity="bottom"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+
+
     </RelativeLayout>
     <TextView
         android:id="@+id/txvTenTruyen"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:gravity="center"
         android:text="KYOUGAKU KOUKOU NO GENJITSU"
-        android:textSize="14dp"
-        android:textColor="#000"/>
+        android:textSize="14sp"
+        android:textColor="#000"
+        />
 </LinearLayout>
