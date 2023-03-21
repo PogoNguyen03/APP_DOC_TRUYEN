@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/mnHome" android:title="Home"
         android:icon="@drawable/baseline_home_24" />
-    <item android:id="@+id/mnInfo" android:title="Search"
+    <item android:id="@+id/mnInfo" android:title="Profile"
         android:icon="@drawable/baseline_format_italic_24"/>
-    <item android:id="@+id/mnSetting" android:title="Account"
+    <item android:id="@+id/mnSetting" android:title="Setting"
         android:icon="@drawable/baseline_settings_24"/>
 
 </menu>

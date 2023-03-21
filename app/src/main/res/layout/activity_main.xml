@@ -12,54 +12,56 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#1D8FD3"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        >
         <EditText
             android:id="@+id/edtTimKiemTruyen"
             android:background="@drawable/bg_edit"
             android:layout_width="match_parent"
+
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="80dp"
-            android:hint="Nhập tên truyện cần tìm"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:hint="@string/search_box"
             android:textColor="#B3ADAD"
             android:textSize="20sp"
             android:gravity="center"
+            android:inputType="text"
+            android:autofillHints=""
             />
 
     </RelativeLayout>
+
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nevMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#1D8FD3"
-            app:itemTextColor="#F0F0F0"
-            app:itemIconTint="#F0F0F0"
-            app:menu="@menu/menu_bottom"
-            />
-        <FrameLayout
-            android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <GridView
+            android:id="@+id/gdvDSTruyen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
-
-            <GridView
-                android:id="@+id/gdvDSTruyen"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:numColumns="3">
-
-            </GridView>
-        </FrameLayout>
-
+            android:numColumns="3"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/fragVPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/main_fragment"/>
     </RelativeLayout>
-
-
-
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1D8FD3"
+        app:itemTextColor="#F0F0F0"
+        app:itemIconTint="#F0F0F0"
+        app:menu="@menu/menu_bottom"
+        />
 </LinearLayout>

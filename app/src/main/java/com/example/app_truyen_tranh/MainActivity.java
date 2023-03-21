@@ -5,7 +5,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,6 +21,7 @@ import com.example.app_truyen_tranh.adapter.TruyenTranhAdapter;
 import com.example.app_truyen_tranh.api.ApiLayTruyen;
 import com.example.app_truyen_tranh.fragment.HomeFragment;
 import com.example.app_truyen_tranh.fragment.InfoFragment;
+import com.example.app_truyen_tranh.fragment.ScreenSlidePageAdapter;
 import com.example.app_truyen_tranh.fragment.SettingFragment;
 import com.example.app_truyen_tranh.interfaces.LayTruyenVe;
 import com.example.app_truyen_tranh.object.TruyenTranh;
@@ -31,10 +35,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
-GridView gdvDSTruyen;
-TruyenTranhAdapter adapter;
-ArrayList<TruyenTranh>truyenTranhArrayList;
-EditText edtTimKiemTruyen;
+    GridView gdvDSTruyen;
+    TruyenTranhAdapter adapter;
+    ArrayList<TruyenTranh>truyenTranhArrayList;
+    EditText edtTimKiemTruyen;
+    BottomNavigationView btnavView;
+
+    // using to move between Fragment
+    ViewPager2 viewPager2;
+    FragmentStateAdapter fragmentStateAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +55,18 @@ EditText edtTimKiemTruyen;
         setClik();
         /*new ApiLayTruyen(this).execute();*/
 
-        btnavView = findViewById(R.id.nevMenu);
+        btnavView = findViewById(R.id.navMenu);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Main");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         btnavView.setOnItemSelectedListener(getBtnListener());
+
+        // using to move between Fragment
+/*        viewPager2 = findViewById(R.id.fragVPager);
+        fragmentStateAdapter = new ScreenSlidePageAdapter(MainActivity.this);
+        viewPager2.setAdapter(fragmentStateAdapter);*/
     }
     private  void  init(){
         truyenTranhArrayList = new ArrayList<>();
@@ -126,37 +141,29 @@ EditText edtTimKiemTruyen;
 
     }*/
 
-    BottomNavigationView btnavView;
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==android.R.id.home){
-            finish();
-            return true;
-        }
-        return true;
-    }
 
     @NonNull
     private NavigationBarView.OnItemSelectedListener getBtnListener() {
         return new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
-                if (itemId == R.id.mnHome) {
-                    getSupportActionBar().setTitle(item.getTitle());
-                    loadFragment(new HomeFragment());
-                    return true;
-                } else if (itemId == R.id.mnInfo) {
-                    getSupportActionBar().setTitle(item.getTitle());
-                    loadFragment(new InfoFragment());
-                    return true;
-                } else if (itemId == R.id.mnSetting) {
-                    getSupportActionBar().setTitle(item.getTitle());
-                    loadFragment(new SettingFragment());
-                    return true;
+                getSupportActionBar().setTitle(item.getTitle());
+                switch(item.getItemId()) {
+                    case R.id.mnHome:
+                        getSupportActionBar().setTitle(item.getTitle());
+                        //loadFragment(new HomeFragment());
+                        MainActivity.super.onRestart();
+                        return true;
+                    case R.id.mnInfo:
+                        getSupportActionBar().setTitle(item.getTitle());
+                        loadFragment(new InfoFragment());
+                        return true;
+                    case R.id.mnSetting:
+                        getSupportActionBar().setTitle(item.getTitle());
+                        loadFragment(new SettingFragment());
+                        return true;
                 }
-                return true;
+                return false;
             }
         };
     }
