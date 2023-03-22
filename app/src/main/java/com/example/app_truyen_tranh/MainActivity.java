@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
         anhXa();
-        setUp();
+        init();
+        gdvDSTruyen.setAdapter(adapter);
         setClik();
         /*new ApiLayTruyen(this).execute();*/
 
@@ -89,9 +89,6 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
     private  void  anhXa(){
         gdvDSTruyen = findViewById(R.id.gdvDSTruyen);
         edtTimKiemTruyen = findViewById(R.id.edtTimKiemTruyen);
-    }
-    private  void  setUp(){
-        gdvDSTruyen.setAdapter(adapter);
     }
     private  void  setClik(){
     edtTimKiemTruyen.addTextChangedListener(new TextWatcher() {
@@ -151,8 +148,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
                 switch(item.getItemId()) {
                     case R.id.mnHome:
                         getSupportActionBar().setTitle(item.getTitle());
-                        //loadFragment(new HomeFragment());
-                        MainActivity.super.onRestart();
+                        loadFragment(new HomeFragment());
                         return true;
                     case R.id.mnInfo:
                         getSupportActionBar().setTitle(item.getTitle());
@@ -170,7 +166,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
 
     void loadFragment (Fragment fmNew) {
         FragmentTransaction fmDang = getSupportFragmentManager().beginTransaction();
-        fmDang.replace(R.id.main_fragment,fmNew);
+        fmDang.replace(R.id.main_fragment, fmNew);
         fmDang.addToBackStack(null);
         fmDang.commit();
     }

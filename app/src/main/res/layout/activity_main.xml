@@ -45,7 +45,7 @@
             android:layout_height="match_parent"
             android:numColumns="3"
             />
-        <androidx.viewpager2.widget.ViewPager2
+       <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/fragVPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
