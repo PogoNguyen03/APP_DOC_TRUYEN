@@ -3,7 +3,9 @@ package com.example.app_truyen_tranh.object;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class TruyenTranh {
+import java.io.Serializable;
+
+public class TruyenTranh implements Serializable {
     private String tenTruyen, tenChap,LinkAnh;
 
 

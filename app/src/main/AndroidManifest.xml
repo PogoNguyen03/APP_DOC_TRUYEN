@@ -14,6 +14,9 @@
         android:theme="@style/Theme.APP_TRUYEN_TRANH"
         tools:targetApi="31">
         <activity
+            android:name=".ChapActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChapTruyenActivity"
             android:exported="false" />
         <activity
@@ -31,7 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

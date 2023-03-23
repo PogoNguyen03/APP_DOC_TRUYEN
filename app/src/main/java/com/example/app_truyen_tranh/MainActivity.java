@@ -3,34 +3,21 @@ package com.example.app_truyen_tranh;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.app_truyen_tranh.adapter.TruyenTranhAdapter;
-import com.example.app_truyen_tranh.api.ApiLayTruyen;
-import com.example.app_truyen_tranh.fragment.HomeFragment;
-import com.example.app_truyen_tranh.fragment.InfoFragment;
 import com.example.app_truyen_tranh.fragment.ScreenSlidePageAdapter;
-import com.example.app_truyen_tranh.fragment.SettingFragment;
-import com.example.app_truyen_tranh.interfaces.LayTruyenVe;
 import com.example.app_truyen_tranh.object.TruyenTranh;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -52,7 +39,6 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
         anhXa();
 
 
-
         /*new ApiLayTruyen(this).execute();*/
 
 
@@ -67,6 +53,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
 
     }
     private  void  anhXa(){
+
         btnavView = findViewById(R.id.navMenu);
         viewPager2 = findViewById(R.id.fragVPager);
         edtTimKiemTruyen = findViewById(R.id.edtTimKiemTruyen);
@@ -90,6 +77,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
         }
     });
     }*/
+
 
    /* @Override
     public void batDau() {
@@ -166,6 +154,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
             }
         };
     }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.app_truyen_tranh.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.ContentView;
@@ -12,8 +13,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.app_truyen_tranh.ChapActivity;
 import com.example.app_truyen_tranh.MainActivity;
 import com.example.app_truyen_tranh.R;
 import com.example.app_truyen_tranh.adapter.TruyenTranhAdapter;
@@ -32,6 +35,9 @@ public class HomeFragment extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         gdvDSTruyen = view.findViewById(R.id.gdvDSTruyen);
         init();
+        anhXa();
+        setUp();
+        setClik();
         gdvDSTruyen.setAdapter(adapter);
 
     }
@@ -66,6 +72,23 @@ public class HomeFragment extends Fragment{
 
 
         adapter = new TruyenTranhAdapter(getContext(),0,truyenTranhArrayList);
+    }
+
+    private void setUp(){gdvDSTruyen.setAdapter(adapter);}
+    private void anhXa(){gdvDSTruyen = gdvDSTruyen.findViewById(R.id.gdvDSTruyen);}
+
+    private void setClik(){
+        gdvDSTruyen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TruyenTranh truyenTranh = truyenTranhArrayList.get(position);
+                Bundle b = new Bundle();
+                b.putSerializable("truyen",truyenTranh);
+                Intent intent = new Intent(getActivity(), ChapActivity.class);
+                intent.putExtra("data",b);
+                startActivity(intent);
+            }
+        });
     }
 
 }
