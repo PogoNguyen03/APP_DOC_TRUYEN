@@ -43,54 +43,35 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
 
     // using to move between Fragment
     ViewPager2 viewPager2;
-    FragmentStateAdapter fragmentStateAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         anhXa();
-        init();
-        gdvDSTruyen.setAdapter(adapter);
-        setClik();
+
+
+
         /*new ApiLayTruyen(this).execute();*/
 
-        btnavView = findViewById(R.id.navMenu);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Main");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        btnavView.setOnItemSelectedListener(getBtnListener());
 
         // using to move between Fragment
-/*        viewPager2 = findViewById(R.id.fragVPager);
-        fragmentStateAdapter = new ScreenSlidePageAdapter(MainActivity.this);
-        viewPager2.setAdapter(fragmentStateAdapter);*/
-    }
-    private  void  init(){
-        truyenTranhArrayList = new ArrayList<>();
-        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
-        truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
+        setupFragment();
 
 
-        adapter = new TruyenTranhAdapter(this,0,truyenTranhArrayList);
     }
     private  void  anhXa(){
-        gdvDSTruyen = findViewById(R.id.gdvDSTruyen);
+        btnavView = findViewById(R.id.navMenu);
+        viewPager2 = findViewById(R.id.fragVPager);
         edtTimKiemTruyen = findViewById(R.id.edtTimKiemTruyen);
     }
-    private  void  setClik(){
+/*    private  void  setClik(){
     edtTimKiemTruyen.addTextChangedListener(new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -108,7 +89,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
             adapter.sortTruyen(s);
         }
     });
-    }
+    }*/
 
    /* @Override
     public void batDau() {
@@ -137,7 +118,29 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
         Toast.makeText(this,"Loi ket noi",Toast.LENGTH_SHORT).show();
 
     }*/
-
+    void setupFragment(){
+        ScreenSlidePageAdapter fragAdapter = new ScreenSlidePageAdapter(this);
+        viewPager2.setAdapter(fragAdapter);
+        btnavView.setOnItemSelectedListener(getBtnListener());
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                switch (position)
+                {
+                    case 0:
+                        btnavView.getMenu().findItem(R.id.mnHome).setChecked(true);
+                        break;
+                    case 1:
+                        btnavView.getMenu().findItem(R.id.mnInfo).setChecked(true);
+                        break;
+                    case 2:
+                        btnavView.getMenu().findItem(R.id.mnSetting).setChecked(true);
+                        break;
+                }
+            }
+        });
+    }
 
     @NonNull
     private NavigationBarView.OnItemSelectedListener getBtnListener() {
@@ -148,15 +151,15 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
                 switch(item.getItemId()) {
                     case R.id.mnHome:
                         getSupportActionBar().setTitle(item.getTitle());
-                        loadFragment(new HomeFragment());
+                        viewPager2.setCurrentItem(0);
                         return true;
                     case R.id.mnInfo:
                         getSupportActionBar().setTitle(item.getTitle());
-                        loadFragment(new InfoFragment());
+                        viewPager2.setCurrentItem(1);
                         return true;
                     case R.id.mnSetting:
                         getSupportActionBar().setTitle(item.getTitle());
-                        loadFragment(new SettingFragment());
+                        viewPager2.setCurrentItem(2);
                         return true;
                 }
                 return false;
@@ -164,10 +167,5 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
         };
     }
 
-    void loadFragment (Fragment fmNew) {
-        FragmentTransaction fmDang = getSupportFragmentManager().beginTransaction();
-        fmDang.replace(R.id.main_fragment, fmNew);
-        fmDang.addToBackStack(null);
-        fmDang.commit();
-    }
+
 }

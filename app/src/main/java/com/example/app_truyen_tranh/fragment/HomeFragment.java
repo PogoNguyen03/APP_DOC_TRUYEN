@@ -6,6 +6,7 @@ import androidx.annotation.ContentView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
@@ -66,4 +67,5 @@ public class HomeFragment extends Fragment{
 
         adapter = new TruyenTranhAdapter(getContext(),0,truyenTranhArrayList);
     }
+
 }

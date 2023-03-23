@@ -25,7 +25,7 @@ public class ScreenSlidePageAdapter extends FragmentStateAdapter {
             case 2:
                 return new SettingFragment();
             default:
-                return  null;
+                return  new HomeFragment();
         }
     }
 
