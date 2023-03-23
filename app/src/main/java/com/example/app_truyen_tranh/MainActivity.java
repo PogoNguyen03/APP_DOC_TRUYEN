@@ -34,7 +34,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
+public class MainActivity extends AppCompatActivity implements LayTruyenVe /*implements LayTruyenVe*/ {
     GridView gdvDSTruyen;
     TruyenTranhAdapter adapter;
     ArrayList<TruyenTranh>truyenTranhArrayList;
@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
         truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
-
-
         adapter = new TruyenTranhAdapter(this,0,truyenTranhArrayList);
     }
     private  void  anhXa(){
@@ -113,7 +111,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
     });
     }
 
-   /* @Override
+   @Override
     public void batDau() {
         Toast.makeText(this,"Dang Lay Ve",Toast.LENGTH_SHORT).show();
     }
@@ -139,7 +137,7 @@ public class MainActivity extends AppCompatActivity /*implements LayTruyenVe*/ {
     public void biLoi() {
         Toast.makeText(this,"Loi ket noi",Toast.LENGTH_SHORT).show();
 
-    }*/
+    }
 
 
     @NonNull

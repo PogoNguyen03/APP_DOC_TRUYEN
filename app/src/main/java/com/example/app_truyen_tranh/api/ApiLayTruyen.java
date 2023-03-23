@@ -3,13 +3,12 @@ package com.example.app_truyen_tranh.api;
 import android.os.AsyncTask;
 
 import com.example.app_truyen_tranh.interfaces.LayTruyenVe;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.ResponseBody;
 
 import java.io.IOException;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 public class ApiLayTruyen extends AsyncTask<Void,Void,Void> {
     String data;
@@ -24,7 +23,7 @@ public class ApiLayTruyen extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... voids) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("https://codebeautify.org/jsonviewer/y231d22b0")
+                .url("https://api.npoint.io/04d8d3fdede11f34f81b")
                 .build();
         data = null;
         try {
@@ -38,7 +37,7 @@ public class ApiLayTruyen extends AsyncTask<Void,Void,Void> {
     }
 
     @Override
-    protected void onPostExecute(Void unused) {
+    protected void onPostExecute(Void aVoid) {
         if (data == null) {
             this.layTruyenVe.biLoi();
         }else {
