@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment{
         truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("The Dark Mage’s Return to Enlistment","Chapter 6","https://www.asurascans.com/wp-content/uploads/2023/03/00-6.png"));
-        truyenTranhArrayList.add(new TruyenTranh("Kakkou no Iinazuke","Chapter 121","https://st.nettruyenvt.com/data/comics/202/kakkou-no-iinazuke.jpg"));
+        truyenTranhArrayList.add(new TruyenTranh("Existence","Chapter 3-","https://asurascans.com/wp-content/uploads/2022/08/kopykita0.png"));
         truyenTranhArrayList.add(new TruyenTranh("Ta Chính Là Không Theo Sáo Lộ Ra Bài","Chapter 90","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("Chuyện Tình Chú Cháu: Vô Pháp Có Được Em","Chapter 92","https://st.nettruyenvt.com/data/comics/222/chuyen-tinh-chu-chau-vo-phap-co-duoc-em.jpg"));
         truyenTranhArrayList.add(new TruyenTranh("Chỉ Có Tình Yêu Mới Có Thể Ngăn Cản Hắc Hóa","Chapter 87","https://st.nettruyenvt.com/data/comics/105/chi-co-tinh-yeu-moi-co-the-ngan-can-hac-7217.jpg"));

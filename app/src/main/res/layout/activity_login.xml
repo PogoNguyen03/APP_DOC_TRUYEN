@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="40dp"
-        android:src="@drawable/baseline_account_circle_24"
+        android:src="@drawable/logo"
         />
 
     <TextView

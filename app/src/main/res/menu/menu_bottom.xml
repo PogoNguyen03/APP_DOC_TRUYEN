@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/mnHome" android:title="Home"
+    <item android:id="@+id/mnHome" android:title="Trang chủ"
         android:icon="@drawable/baseline_home_24" />
-    <item android:id="@+id/mnInfo" android:title="Profile"
+    <item android:id="@+id/mnInfo" android:title="Trang cá nhân"
         android:icon="@drawable/baseline_format_italic_24"/>
-    <item android:id="@+id/mnSetting" android:title="Setting"
+    <item android:id="@+id/mnSetting" android:title="Cài đặt"
         android:icon="@drawable/baseline_settings_24"/>
 
 </menu>
