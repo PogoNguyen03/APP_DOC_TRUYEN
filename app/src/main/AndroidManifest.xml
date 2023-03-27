@@ -8,16 +8,13 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logodaocomics"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.APP_TRUYEN_TRANH"
         tools:targetApi="31">
         <activity
             android:name=".ChapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChapTruyenActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScrActivity"

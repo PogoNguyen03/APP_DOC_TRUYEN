@@ -70,19 +70,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/clothingName"
+                        android:id="@+id/TruyenYeuThichName"
                         android:text="Truyện yêu thích"
                         style="@style/TextColor"
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/clothingImage"/>
+                        android:layout_below="@+id/TruyenYeuThichImage"/>
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:src="@drawable/baseline_favorite_24"
-                        android:id="@+id/clothingImage"
+                        android:id="@+id/TruyenYeuThichImage"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
 
@@ -105,19 +105,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/elecName"
+                        android:id="@+id/LichSuName"
                         android:text="Lịch sử"
                         style="@style/TextColor"
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/elecImage"/>
+                        android:layout_below="@+id/LichSuImage"/>
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:src="@drawable/outline_library_books_24"
-                        android:id="@+id/elecImage"
+                        android:id="@+id/LichSuImage"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
 
@@ -146,35 +146,30 @@
                 app:cardCornerRadius="20dp">
 
                 <RelativeLayout
-                    style="@style/CardBackground"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    style="@style/CardBackground">
 
                     <TextView
-                        android:id="@+id/homeName"
-                        style="@style/TextColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/switchMode"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginEnd="7dp"
+                        android:id="@+id/ChuyenGiaoDien"
                         android:text="Chuyển giao diện"
-                        android:textSize="20sp" />
+                        style="@style/TextColor"
+
+                        android:textSize="20sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/switchMode"/>
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switchMode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="52dp"
-                        android:layout_marginTop="26dp"
-                        android:layout_marginEnd="44dp"
+                        android:layout_marginTop="0dp"
                         android:layout_marginBottom="10dp"
+                        android:gravity="center"
                         android:thumb="@drawable/thumb"
                         app:track="@drawable/track">
 
@@ -199,20 +194,20 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/beautyName"
+                        android:id="@+id/PhanHoiYKienName"
                         android:text="Phản hồi ý kiến"
                         style="@style/TextColor"
 
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/beautyImage"/>
+                        android:layout_below="@+id/PhanHoiYKienImage"/>
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:src="@drawable/outline_mode_edit_24"
-                        android:id="@+id/beautyImage"
+                        android:id="@+id/PhanHoiYKienImage"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"/>
 
@@ -246,10 +241,10 @@
                     style="@style/CardBackground">
 
                     <TextView
-                        android:id="@+id/pharmName"
+                        android:id="@+id/GioiThieuName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/pharmImage"
+                        android:layout_below="@+id/GioiThieuImage"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Giới thiệu"
@@ -257,7 +252,7 @@
                         android:textSize="20sp" />
 
                     <ImageView
-                        android:id="@+id/pharmImage"
+                        android:id="@+id/GioiThieuImage"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_centerHorizontal="true"
