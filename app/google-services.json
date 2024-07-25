@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "873129244104",
+    "project_id": "daocomics-93e64",
+    "storage_bucket": "daocomics-93e64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873129244104:android:099e4ae9a94764b26cbcfd",
+        "android_client_info": {
+          "package_name": "com.example.daocomics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873129244104-qlvb2f057d1l75lerd6mn3sjjn2lmnst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNu2hWx1Kkio4XkVXBKkIEClbGeGWl2rI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873129244104-qlvb2f057d1l75lerd6mn3sjjn2lmnst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

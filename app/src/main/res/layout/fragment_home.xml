@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.tabmain.HomeFragment"
+    android:paddingLeft="20dp"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xin chào bạn, abcxyz."
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/tvHello"
+
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            />
+        <TextView
+            android:id="@+id/tvTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hôm nay bạn muốn đọc truyện gì ?"
+            app:layout_constraintTop_toBottomOf="@id/tvHello"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/glCenter"
+
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:text="Thể loại"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/horizontalScrollView"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTheLoai"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTemp"
+            android:text="Xem thêm"
+            android:textSize="16dp"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:backgroundTint="#004838D1"
+            android:outlineSpotShadowColor="#FFFFFF"
+            android:shadowColor="@color/white"
+            android:outlineAmbientShadowColor="@color/white"
+            android:textColor="@color/xanhduong"
+            />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTheLoai"
+            android:scrollbars="none"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCateAct"
+                    app:cornerRadius="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="55dp"
+                    android:layout_marginRight="12dp"
+                    android:backgroundTint="#F5F5FA"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Hành động"
+                    android:textColor="@color/xanhduong"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCateRom"
+                    app:cornerRadius="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="55dp"
+                    android:layout_marginRight="12dp"
+                    android:backgroundTint="#F5F5FA"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Tình cảm"
+                    android:textColor="@color/xanhduong"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCateCom"
+                    app:cornerRadius="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="55dp"
+                    android:layout_marginRight="12dp"
+                    android:backgroundTint="#F5F5FA"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Hài hước"
+                    android:textColor="@color/xanhduong"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCateHor"
+                    app:cornerRadius="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="55dp"
+                    android:layout_marginRight="12dp"
+                    android:backgroundTint="#F5F5FA"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:text="Kinh dị"
+                    android:textColor="@color/xanhduong"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="20dp"
+
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.60358053" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

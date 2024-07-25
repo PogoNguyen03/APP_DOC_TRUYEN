@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+   >
+    <group android:id="@+id/group2"
+        android:divider="@drawable/underline"
+        android:dividerHeight="1dp">
+        <item android:id="@+id/genre" android:title="Thể loại truyện"/>
+    </group>
+    <group android:id="@+id/group3"
+        android:divider="@drawable/underline"
+        android:dividerHeight="1dp">
+        <item android:id="@+id/changePass" android:title="Đổi mật khẩu"/>
+    </group>
+    <group android:id="@+id/group5"
+        android:divider="@drawable/underline"
+        android:dividerHeight="1dp">
+        <item android:id="@+id/feedback" android:title="Phản hồi ý kiến"/>
+    </group>
+    <group android:id="@+id/group6"
+        android:divider="@drawable/underline"
+        android:dividerHeight="1dp">
+        <item android:id="@+id/aboutUs" android:title="Về chúng tôi"/>
+    </group>
+</menu>

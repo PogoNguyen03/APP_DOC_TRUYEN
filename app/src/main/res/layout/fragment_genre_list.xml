@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.genre.GenreListFragment"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHD"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#3576AB"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Hành động"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/glCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPL"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#0098C1"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Phiêu lưu"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glCenter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHH"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#00B8BF"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Hài hước"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/glCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHD" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHK"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#26D4A7"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Hài kịch"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/btnPL" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTT"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#736EB3"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Thể thao"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/glCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnHH" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTrT"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#9167AE"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Trinh thám"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/btnHK" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKD"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#AB60A2"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Kinh dị"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/glCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTT" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTC"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_margin="12dp"
+            android:backgroundTint="#DE8EAC"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="Tình cảm"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/glCenter"
+            app:layout_constraintTop_toBottomOf="@+id/btnTrT" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

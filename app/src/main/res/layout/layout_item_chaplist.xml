@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_weight="2"
+    android:id="@+id/chapter"
+    android:gravity="center_vertical">
+<TextView
+    android:id="@+id/tvChapName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Chap 1"
+    android:textColor="@color/xam"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_weight="1"/>
+
+</LinearLayout>
